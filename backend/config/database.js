@@ -1,8 +1,9 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
+import mongoose from "mongoose"
+import dotenv from "dotenv";
+dotenv.config();
 
 
-const dbConnect = ()=>{
+export const  dbConnect = ()=>{
     mongoose.connect(process.env.MONGODB_URL, {})
     .then(()=>{
         console.log("DB connection successfull");
@@ -14,4 +15,3 @@ const dbConnect = ()=>{
     })
 }
 
-module.exports=dbConnect;
